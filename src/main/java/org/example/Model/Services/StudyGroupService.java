@@ -6,9 +6,7 @@ import org.example.Model.StudyGroup;
 import org.example.Model.Teacher;
 import org.example.View.View;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudyGroupService implements StudyGroupInterface{
     Scanner in = new Scanner(System.in);
@@ -24,16 +22,22 @@ public class StudyGroupService implements StudyGroupInterface{
         System.out.println(v.userView(studentList));
         System.out.println("Выберите студентов, которые относятся к группе, вводя их номера\n" +
                 " Когда закончите набор, наберите 0");
+        HashSet<Integer> choises = new HashSet<>();
         do {
             choiseStudent = in.nextInt();
-            if (choiseStudent <= studentList.size() && choiseStudent >= 0) {
-                if (choiseStudent != 0) {
-                    studentGroup.add(studentList.get(choiseStudent - 1));
-                }
-            } else {
-                System.out.println("Введено некорректное значение!");
-            }
 
+            if(!choises.contains(choiseStudent)){
+                if (choiseStudent <= studentList.size() && choiseStudent >= 0) {
+                    if (choiseStudent != 0) {
+                        studentGroup.add(studentList.get(choiseStudent - 1));
+                    }
+                } else {
+                    System.out.println("Введено некорректное значение!");
+                }
+            }else {
+                System.out.println("Данный студент уже выбран");
+            }
+            choises.add(choiseStudent);
         } while (choiseStudent != 0);
 
         StudyGroup group = new StudyGroup(groupTeacher, studentGroup);
