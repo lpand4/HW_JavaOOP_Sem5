@@ -78,7 +78,6 @@ public class Controller {
                     break;
 
             }
-
         }while (choise != 0);
 
     }
@@ -110,25 +109,24 @@ public class Controller {
         System.out.println("Введите номер группы, которую хотите посмотреть \n");
         int index = in.nextInt();
         System.out.println(v.groupView(studyGroups.get(index - 1)));
-
     }
 
     private void showUsersWithoutGroups(){
-        System.out.println(v.studentView(studentList));
-        System.out.println(v.teacherView(teacherList));
+        System.out.println(v.userView(studentList));
+        System.out.println(v.userView(teacherList));
     }
 
 
-    public static void wait(int ms)
-    {
-        try
-        {
-            Thread.sleep(ms);
-        }
-        catch(InterruptedException ex)
-        {
-            Thread.currentThread().interrupt();
-        }
-    }
+//    public static void wait(int ms)
+//    {
+//        try
+//        {
+//            Thread.sleep(ms);
+//        }
+//        catch(InterruptedException ex)
+//        {
+//            Thread.currentThread().interrupt();
+//        }
+//    }
 
 }

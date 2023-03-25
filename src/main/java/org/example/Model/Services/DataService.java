@@ -9,5 +9,4 @@ import java.util.List;
 public interface DataService {
     User createStudent();
     User createTeacher();
-    List<User> read(List<User> users);
 }

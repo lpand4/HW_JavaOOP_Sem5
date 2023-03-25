@@ -24,9 +24,4 @@ public class UserService implements DataService {
         String fio = in.nextLine();
         return new Teacher(new Date(), fio);
     }
-
-    @Override
-    public List<User> read(List<User> users) {
-        return users;
-    }
 }

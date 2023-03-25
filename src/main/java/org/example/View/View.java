@@ -7,32 +7,33 @@ import org.example.Model.User;
 
 import java.util.List;
 
-public class View {
+public class View <T extends User> {
 
-    public String studentView(List<Student> students){
+    public String userView(List<T> userList){
         StringBuilder sb = new StringBuilder();
         int count = 1;
-        for (User st:students) {
+        for (User user:userList) {
             sb.append(count)
                     .append(". ")
-                    .append(st.toString())
+                    .append(user.toString())
                     .append("\n");
             count++;
         }
         return sb.toString();
     }
-    public String teacherView(List<Teacher> teachers){
-        StringBuilder sb = new StringBuilder();
-        int count = 1;
-        for (User ts:teachers) {
-            sb.append(count)
-                    .append(". ")
-                    .append(ts.toString())
-                    .append("\n");
-            count++;
-        }
-        return sb.toString();
-    }
+    //Заменил повторяющийся код, используя обобщение
+//    public String teacherView(List<Teacher> teachers){
+//        StringBuilder sb = new StringBuilder();
+//        int count = 1;
+//        for (User ts:teachers) {
+//            sb.append(count)
+//                    .append(". ")
+//                    .append(ts.toString())
+//                    .append("\n");
+//            count++;
+//        }
+//        return sb.toString();
+//    }
     public String groupView(StudyGroup group){
         StringBuilder sb = new StringBuilder();
         sb.append("Группа ")
