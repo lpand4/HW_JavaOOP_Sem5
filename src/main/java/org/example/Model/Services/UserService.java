@@ -1,15 +1,14 @@
 package org.example.Model.Services;
 
-import org.example.Model.Services.DataService;
+import org.example.Model.Services.Interfaces.CreateStudentInterface;
+import org.example.Model.Services.Interfaces.CreateTeacherInterface;
 import org.example.Model.Student;
 import org.example.Model.Teacher;
-import org.example.Model.User;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
-public class UserService implements DataService {
+public class UserService implements CreateStudentInterface, CreateTeacherInterface {
     Scanner in = new Scanner(System.in);
     @Override
     public Student createStudent() {

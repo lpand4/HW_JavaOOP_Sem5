@@ -1,5 +1,6 @@
 package org.example.Model.Services;
 
+import org.example.Model.Services.Interfaces.StudyGroupInterface;
 import org.example.Model.Student;
 import org.example.Model.StudyGroup;
 import org.example.Model.Teacher;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class StudyGroupService {
+public class StudyGroupService implements StudyGroupInterface{
     Scanner in = new Scanner(System.in);
 
     public StudyGroup createGroup(List<Teacher> teacherList, List<Student> studentList) {

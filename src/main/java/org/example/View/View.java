@@ -41,14 +41,8 @@ public class View <T extends User> {
                 .append("\nПреподаватель \n")
                 .append(group.currentTeacher)
                 .append("\nСтуденты: \n");
-        int count = 1;
-        for (User st:group.studentList) {
-            sb.append(count)
-                    .append(". ")
-                    .append(st.toString())
-                    .append("\n");
-            count++;
-        }
+        //заменил повторяющийся код на имеюшийся
+        sb.append(userView((List<T>) group.studentList));
         return sb.toString();
     }
 
@@ -64,8 +58,6 @@ public class View <T extends User> {
         }
         return sb.toString();
     }
-
-
     public String startMenu(){
         StringBuilder sb = new StringBuilder();
         sb.append("Меню: \n")
